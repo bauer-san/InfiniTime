@@ -80,7 +80,7 @@ jobs:
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}
 
       - name: Install MCUBoot
-        if:   steps.cache-mcuboot.outputs.cache-hit != 'true'  # Install MCUBoot if not found in cache
+#        if:   steps.cache-mcuboot.outputs.cache-hit != 'true'  # Install MCUBoot if not found in cache
         run:  |
           cd ${{ runner.temp }}
           git clone --branch v1.7.2 https://github.com/mcu-tools/mcuboot
