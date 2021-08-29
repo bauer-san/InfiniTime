@@ -17,6 +17,9 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: True
+  
 # Steps to run for the Workflow
 jobs:
   build:
