@@ -70,17 +70,17 @@ jobs:
           mv nRF5_SDK_15.3.0_59ac345 nrf5_sdk
 
       - name: Check cache for MCUBoot
-        id:   cache-mcuboot
+        id:   cache-mcuboot2
         uses: actions/cache@v2
         env:
-          cache-name: cache-mcuboot
+          cache-name: cache-mcuboot2
         with:
           path: ${{ runner.temp }}/mcuboot
           key:  ${{ runner.os }}-build-${{ env.cache-name }}
           restore-keys: ${{ runner.os }}-build-${{ env.cache-name }}
 
       - name: Install MCUBoot
-#        if:   steps.cache-mcuboot.outputs.cache-hit != 'true'  # Install MCUBoot if not found in cache
+#        if:   steps.cache-mcuboot2.outputs.cache-hit != 'true'  # Install MCUBoot if not found in cache
         run:  |
           cd ${{ runner.temp }}
           git clone --branch v1.7.2 https://github.com/mcu-tools/mcuboot
